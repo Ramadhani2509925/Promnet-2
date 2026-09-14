@@ -8,28 +8,10 @@
     <h1>Personal Website</h1>
     <p>Selamat datang di website pribadi saya.</p>
     <nav>
-      <a
-        href="index.html"
-        >Home</a
-      >
-      |
-      <a
-        href="02-About.html"
-        >About</a
-      >
-      |
-      <a
-        href="03-Project.html"
-        >Project</a
-      >
-      |
-      <a
-        href="04-Contact.html"
-        >Contact</a   
-     |
-      <a
-        href="05-Katalog.html"
-        >Katalog</a     
+      <a href="index.html">index</a> | <a href="02-About.html">About</a> |
+      <a href="03-Project.html">Project</a> |
+      <a href="04-Contact.html">Kontak</a> |
+      <a href="pengalaman.html">pengalaman</a>
     </nav>
     <hr />
     <h2>Informasi Kontak</h2>
@@ -41,8 +23,7 @@
       <tr>
         <td>email ke</td>
         <td>
-          <a
-             href="mailto:gintaramadhani24@student.upi.edu"
+          <a href="mailto:gintaramadhani24@student.upi.edu"
             >gintaramadhani24@student.upi.edu</a
           >
         </td>
@@ -50,73 +31,76 @@
     </p>
     <h2>Form Pesan</h2>
     <form>
-        <table border="1" cellspacing="0" cellpadding="8">
-            <tr>
-                <th colspan="2">Form Data Kontak</th>
-            </tr>
-            <tr>
-                <td><strong>Nama Lengkap:</strong></td>
-                <td><input type="text" name="nama" size="70"></td>
-            </tr>
-            <tr>
-                <td><strong>Email:</strong></td>
-                <td><input type="email" name="email" size="70"></td>
-            </tr>
-            <tr>
-                <td><strong>Nomor Telepon:</strong></td>
-                <td><input type="tel" name="telepon" size="25"></td>
-            </tr>
-            <tr>
-                <td><strong>Jenis Kelamin:</strong></td>
-                <td>
-                    <input type="radio" name="kelamin" value="laki"> Laki-laki
-                    <input type="radio" name="kelamin" value="perempuan"> Perempuan
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Tanggal Lahir:</strong></td>
-                <td><input type="date" name="tanggal_lahir"></td>
-            </tr>
-            <tr>
-                <td><strong>Topik Pesan:</strong></td>
-                <td>
-                    <select name="topik">
-                        <option value="diskusi">Diskusi</option>
-                        <option value="kerjasama">Kerja Sama</option>
-                        <option value="lainnya">Lainnya</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Jenis Pesan:</strong></td>
-                <td>
-                    <input type="radio" name="jenis_pesan" value="pertanyaan"> Pertanyaan
-                    <input type="radio" name="jenis_pesan" value="saran"> Saran
-                    <input type="radio" name="jenis_pesan" value="lainnya"> Lainnya
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Pesan:</strong></td>
-                <td><textarea name="pesan" rows="6" cols="50"></textarea></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" value="Kirim Pesan">
-                    <input type="reset" value="Reset">
-                </td>
-            </tr>
-        </table>
+      <table border="1" cellspacing="0" cellpadding="8">
+        <tr>
+          <th colspan="2">Form Data Kontak</th>
+        </tr>
+        <tr>
+          <td><strong>Nama Lengkap:</strong></td>
+          <td><input type="text" name="nama" size="70" /></td>
+        </tr>
+        <tr>
+          <td><strong>Email:</strong></td>
+          <td><input type="email" name="email" size="70" /></td>
+        </tr>
+        <tr>
+          <td><strong>Nomor Telepon:</strong></td>
+          <td><input type="tel" name="telepon" size="25" /></td>
+        </tr>
+        <tr>
+          <td><strong>Jenis Kelamin:</strong></td>
+          <td>
+            <input type="radio" name="kelamin" value="laki" /> Laki-laki
+            <input type="radio" name="kelamin" value="perempuan" /> Perempuan
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Tanggal Lahir:</strong></td>
+          <td><input type="date" name="tanggal_lahir" /></td>
+        </tr>
+        <tr>
+          <td><strong>Topik Pesan:</strong></td>
+          <td>
+            <select name="topik">
+              <option value="diskusi">Diskusi</option>
+              <option value="kerjasama">Kerja Sama</option>
+              <option value="lainnya">Lainnya</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Jenis Pesan:</strong></td>
+          <td>
+            <input type="radio" name="jenis_pesan" value="pertanyaan" />
+            Pertanyaan
+            <input type="radio" name="jenis_pesan" value="saran" /> Saran
+            <input type="radio" name="jenis_pesan" value="lainnya" /> Lainnya
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Pesan:</strong></td>
+          <td><textarea name="pesan" rows="6" cols="50"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Kirim Pesan" />
+            <input type="reset" value="Reset" />
+          </td>
+        </tr>
+      </table>
     </form>
     <p>
       <em
         >Catatan: karena website ini hanya menggunakan HTML, form belum
-        terhubung ke server/database</em>
+        terhubung ke server/database</em
+      >
     </p>
     <hr />
     <a
-        href="file:///C:/Users/GINTA%20RAMADHANI/OneDrive/Documents/Tugas%20Html%201/01-Home.html"
-        > Kembali ke Home</a
-      >
+      href="file:///C:/Users/GINTA%20RAMADHANI/OneDrive/Documents/Tugas%20Html%201/01-Home.html"
+    >
+      Kembali ke Home</a
+    >
     <p>© 2026 Ginta Ramadhani.</p>
-    </body>
+  </body>
 </html>
