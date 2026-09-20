@@ -1,0 +1,104 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    background-color: rgb(248, 161, 216);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 100px;
+    box-shadow: 0 1px 5px pink;
+}
+
+.ginta-rmdhni{
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(204, 216, 224);
+    margin-left: 400px;
+     background: linear-gradient(to bottom, rgb(140, 172, 203), rgb(214, 140, 184));
+    padding: 50px 30px;
+    border-radius: 0px;
+    width: 500px;
+}
+
+#ginta-rmdhni{
+    background: linear-gradient(to bottom, navy, rgb(214, 140, 184));
+    display: flex;
+    align-items: center;
+    padding: 100px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.logo-ginta{
+    height: 150px;
+}
+
+.logo-ginta{
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #e39bde;
+    padding: 4px;
+    margin: 1rem auto 0.5rem auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e8d8ff;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.logo-ginta:hover{
+    transform: scale(1.08);
+}
+
+@keyframes fadeIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.logo-ginta{
+    animation: fadeIn 1.2 ease;
+}
+    
+
+img{
+    display: block;
+    margin: 25px auto;
+    border-radius: 50%;
+    border: 4px solid palevioletred;
+    box-shadow: 0 5px 15px rgb(245, 245, 162);
+}
+
+
+.ginta-rmdhni{
+      background: linear-gradient(to bottom, rgb(140, 172, 203), rgb(214, 140, 184));
+    padding: 50px 30px;
+    border-radius: 0px;
+    width: 500px;
+}
+
+.ginta-rmdhni h1{
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ginta-rmdhni p{
+    margin-bottom: 10px;
+}
+
+.ginta-rmdhni:hover{
+    background-color: rgb(163, 163, 224);
+    color: rgb(204, 226, 248);
+}
+
+
+#ginta-rmdhni {
+    padding: 32px 24px 16px;
+    text-align: center;
+}
+  
