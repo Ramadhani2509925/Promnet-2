@@ -1,104 +1,580 @@
-{
-    margin: 0;
+/* =========================================================
+   Personal Website — Ginta Ramadhani
+   Palet asli dipertahankan: pink, biru keabu-abuan, rose
+   ========================================================= */
+
+:root {
+  --pink: #f8a1d8;
+  --pink-soft: #fdeef8;
+  --pink-deep: #b4468d;
+  --rose: #d68cb8;
+  --blue: #8cacca;
+  --navy: #2f3e5c;
+  --ink: #3a2c40;
+  --muted: #6b5a72;
+  --line: #f0d5e6;
+  --paper: #ffffff;
+  --accent-border: palevioletred;
+
+  --font-body: "DM Sans", "Segoe UI", Arial, sans-serif;
+  --font-head: "Bricolage Grotesque", "DM Sans", "Segoe UI", Arial, sans-serif;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: linear-gradient(180deg, #fdeef8 0%, #eef3fa 100%) fixed;
+  min-height: 100vh;
+  padding: 32px 16px;
+}
+
+/* ---------- Kerangka halaman ---------- */
+.ginta-rmdhni {
+  max-width: 920px;
+  margin: 0 auto;
+  background: var(--paper);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(180, 70, 141, 0.18);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  padding: 40px 40px 32px;
+  color: #fff;
+  background: linear-gradient(135deg, #5f7fa8 0%, #b8639b 100%);
+}
+
+.site-header h1 {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+.site-header p {
+  font-size: 1.05rem;
+  opacity: 0.94;
+}
+
+/* ---------- Navigasi ---------- */
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* menu berada di tengah */
+  align-items: center;
+  gap: 6px;
+  padding: 12px 28px;
+  background: var(--pink-soft);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-nav a {
+  padding: 8px 18px;
+  border-radius: 999px;
+  color: var(--pink-deep);
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.site-nav a:hover {
+  background: var(--pink);
+  color: var(--navy);
+}
+
+.site-nav a[aria-current="page"] {
+  background: var(--pink-deep);
+  color: #fff;
+}
+
+/* ---------- Konten ---------- */
+main {
+  padding: 36px 40px 40px;
+}
+
+h2,
+h3 {
+  font-family: var(--font-head);
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin: 32px 0 12px;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin: 24px 0 8px;
+}
+
+main > :first-child,
+main > section:first-child > :first-child {
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 12px;
+  max-width: 68ch;
+}
+
+strong {
+  color: var(--navy);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--line);
+  margin: 28px 0;
+}
+
+ul,
+ol {
+  padding-left: 1.4rem;
+  margin-bottom: 12px;
+}
+
+li {
+  margin: 4px 0;
+}
+
+a {
+  color: var(--pink-deep);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--navy);
+}
+
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--pink-deep);
+  outline-offset: 2px;
+}
+
+/* ---------- Gambar ---------- */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* [Selector ID] foto profil bulat
+   [Box Model] padding + border + margin diatur sekaligus
+   [Width & Height] ukuran foto 220 x 220 px
+   [Tantangan] animasi fade-in lewat @keyframes */
+#foto-profil {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 6px;
+  border: 4px solid var(--accent-border);
+  margin: 8px;
+  background-color: var(--pink-soft);
+  box-shadow: 0 6px 20px rgba(214, 140, 184, 0.45);
+  animation: fadeIn 1.2s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* [Hover + transition] foto membesar halus */
+#foto-profil:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 28px rgba(180, 70, 141, 0.45);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* foto project / pengalaman */
+.photo {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 3px solid var(--accent-border);
+  box-shadow: 0 6px 20px rgba(214, 140, 184, 0.35);
+  margin: 12px 0 16px;
+}
+
+.photo.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.photo {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(214, 140, 184, 0.5);
+}
+
+/* ---------- Beranda ---------- */
+/* [Selector Class + Flexbox] foto di kiri, teks di kanan */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 8px 0;
+}
+
+.hero-text {
+  flex: 1 1 320px;
+}
+
+.hero h2 {
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  margin-bottom: 10px;
+}
+
+/* [Flexbox] daftar yang sedang dipelajari tampil sejajar seperti tag */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 16px;
+}
+
+.skill-list li {
+  margin: 0;
+  padding: 8px 18px;
+  background: var(--pink-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--pink-deep);
+  font-weight: 500;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* [Hover + transition] tag berubah warna dan naik sedikit */
+.skill-list li:hover {
+  background: var(--pink-deep);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ---------- Tabel ---------- */
+.table-wrap {
+  overflow-x: auto;
+  margin: 12px 0 8px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.97rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.data-table th {
+  background: var(--pink-soft);
+  color: var(--pink-deep);
+  font-weight: 600;
+}
+
+.data-table.info td:first-child {
+  width: 34%;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.data-table.summary th,
+.data-table.summary td {
+  text-align: center;
+}
+
+.data-table.summary td:nth-child(2) {
+  text-align: left;
+}
+
+.data-table tbody tr:hover td {
+  background: #fff8fc;
+}
+
+/* ---------- Project ---------- */
+.project {
+  margin-bottom: 8px;
+}
+
+.project h2 {
+  margin-top: 8px;
+}
+
+/* ---------- Form kontak ---------- */
+.form-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.form-table th,
+.form-table td {
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.form-table th {
+  background: var(--pink-soft);
+  color: var(--pink-deep);
+  text-align: center;
+}
+
+.form-table td:first-child {
+  width: 30%;
+  color: var(--navy);
+}
+
+.form-table td.actions {
+  text-align: center;
+  background: #fffafd;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 9px 12px;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid #dcbdd0;
+  border-radius: 8px;
+}
+
+input[type="tel"] {
+  max-width: 260px;
+}
+
+input[type="date"] {
+  max-width: 220px;
+}
+
+select {
+  max-width: 260px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 18px;
+  cursor: pointer;
+}
+
+.choice input {
+  accent-color: var(--pink-deep);
+}
+
+input[type="submit"],
+input[type="reset"] {
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 24px;
+  margin: 0 4px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+input[type="submit"] {
+  background: var(--pink-deep);
+  color: #fff;
+  border: 2px solid var(--pink-deep);
+}
+
+input[type="submit"]:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+input[type="reset"] {
+  background: transparent;
+  color: var(--pink-deep);
+  border: 2px solid var(--pink-deep);
+}
+
+input[type="reset"]:hover {
+  background: var(--pink-soft);
+}
+
+.note {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: var(--pink-soft);
+  border-left: 4px solid var(--rose);
+  border-radius: 0 8px 8px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.note p {
+  margin: 0;
+}
+
+/* ---------- Tautan kembali ---------- */
+.back-link {
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: 18px 40px 24px;
+  background: var(--pink-soft);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.site-footer p {
+  margin: 0;
+  max-width: none;
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 640px) {
+  body {
     padding: 0;
-    box-sizing: border-box;
-}
+  }
 
-nav{
-    background-color: rgb(248, 161, 216);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 100px;
-    box-shadow: 0 1px 5px pink;
-}
+  .ginta-rmdhni {
+    border-radius: 0;
+    box-shadow: none;
+  }
 
-.ginta-rmdhni{
-    text-decoration: none;
-    font-size: 15px;
-    color: rgb(204, 216, 224);
-    margin-left: 400px;
-     background: linear-gradient(to bottom, rgb(140, 172, 203), rgb(214, 140, 184));
-    padding: 50px 30px;
-    border-radius: 0px;
-    width: 500px;
-}
+  .site-header {
+    padding: 28px 20px 22px;
+  }
 
-#ginta-rmdhni{
-    background: linear-gradient(to bottom, navy, rgb(214, 140, 184));
-    display: flex;
-    align-items: center;
-    padding: 100px;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
+  .site-nav {
+    padding: 10px 14px;
+  }
 
-.logo-ginta{
-    height: 150px;
-}
+  .site-nav a {
+    padding: 7px 14px;
+    font-size: 0.95rem;
+  }
 
-.logo-ginta{
-    display: block;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #e39bde;
-    padding: 4px;
-    margin: 1rem auto 0.5rem auto;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #e8d8ff;
-    animation: fadeIn 1.5s ease forwards;
-}
+  main {
+    padding: 24px 20px 28px;
+  }
 
-.logo-ginta:hover{
-    transform: scale(1.08);
-}
+  .site-footer {
+    padding: 16px 20px 20px;
+  }
 
-@keyframes fadeIn{
-    from{opacity: 0;}
-    to{opacity: 1;}
-}
+  #foto-profil {
+    width: 180px;
+    height: 180px;
+  }
 
-.logo-ginta{
-    animation: fadeIn 1.2 ease;
-}
-    
-
-img{
-    display: block;
-    margin: 25px auto;
-    border-radius: 50%;
-    border: 4px solid palevioletred;
-    box-shadow: 0 5px 15px rgb(245, 245, 162);
-}
-
-
-.ginta-rmdhni{
-      background: linear-gradient(to bottom, rgb(140, 172, 203), rgb(214, 140, 184));
-    padding: 50px 30px;
-    border-radius: 0px;
-    width: 500px;
-}
-
-.ginta-rmdhni h1{
-    margin-bottom: 10px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.ginta-rmdhni p{
-    margin-bottom: 10px;
-}
-
-.ginta-rmdhni:hover{
-    background-color: rgb(163, 163, 224);
-    color: rgb(204, 226, 248);
-}
-
-
-#ginta-rmdhni {
-    padding: 32px 24px 16px;
+  .hero {
     text-align: center;
+    gap: 16px;
+  }
+
+  .skill-list {
+    justify-content: center;
+  }
+
+  /* form ditumpuk vertikal di layar kecil */
+  .form-table,
+  .form-table tbody,
+  .form-table tr,
+  .form-table th,
+  .form-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .form-table td:first-child {
+    width: 100%;
+    border-bottom: 0;
+    padding-bottom: 4px;
+  }
+
+  .form-table td:last-child {
+    border-top: 0;
+    padding-top: 4px;
+  }
+
+  .form-table td.actions {
+    border-top: 1px solid var(--line);
+  }
+
+  input[type="tel"],
+  input[type="date"],
+  select {
+    max-width: 100%;
+  }
 }
-  
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+
+  #foto-profil {
+    animation: none;
+  }
+}
